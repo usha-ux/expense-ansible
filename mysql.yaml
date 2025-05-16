@@ -1,4 +1,4 @@
-- name: configure myswl server
+- name: configure mysql server
   hosts: mysql
   become: yes
   vars:
@@ -15,7 +15,7 @@
     - name: install mysql server
       ansible.builtin.package:
         name: mysql
-        state: present
+        state: installed
 
     - name: start and enable mysql server
       ansible.builtin.service:
