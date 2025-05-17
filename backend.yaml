@@ -60,5 +60,13 @@
         login_user: root
         login_password: ExpenseApp@1
         login_host: mysql.shrihan.fun
-        target: /app/schema/backend.sql                
+        target: /app/schema/backend.sql   
+
+    - name: daemon reload and restart service
+      ansible.builtin.systemd.service:
+        enabled: true
+        state: restarted
+        daemon_reload: true
+        name: backend
+
 
